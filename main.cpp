@@ -45,15 +45,13 @@ int wmain(int argc, wchar_t** argv)
 		wcin.imbue(locale{""});
 		setlocale(LC_ALL, "");
 
-		if(argc == 1)
-			CommandLine();
-		else if(argc == 2)
-			interpret(argc[1]);
-		else
+		if(argc != 2)
 		{
 			wcerr << wformat{L"Usage: %1% [filename]"} % argv[0] << endl;
 			return EXIT_FAILURE;
 		}
+
+		interpret(argc[1]);
 
 		return EXIT_SUCCESS;
 	}
