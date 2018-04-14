@@ -25,6 +25,7 @@ namespace tanzanite
 {
 	void CommandLine();
 	void interpret(const std::wstring& filename);
+	void CommandProcess(const std::wstring& command);
 }
 
 #endif
